@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "./Models/Production.php";
+
 $bud_terence = new Production(
     'Lo chiamavano Trinità',
     'IT',
