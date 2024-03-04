@@ -4,7 +4,7 @@
 ## Traccia: php-oop-1
 
 ```
-Create un file index.php in cui è definita una classe Production.
+Create u n file index.php in cui è definita una classe Production.
 
 All'interno della classe dovrete gestire un titolo, una lingua e un voto (su una scala da 1 a 10). La classe deve avere le sue variabili d'istanza, il costruttore e i metodi.
 Istanziate poi almeno due oggetti Production e stampate a schermo i loro valori.
