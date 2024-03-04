@@ -14,3 +14,27 @@ class Production {
             $this->voto = $voto;
     }
 }
+
+$bud_terence = new Production(
+    'Lo chiamavano Trinità',
+    'ita',
+    4
+);
+
+$di_caprio = new Production(
+    'Inception',
+    'us',
+    5
+);
+
+$jack_nick = new Production(
+    'Shining',
+    'us',
+    3
+);
+
+$ant_hop = new Production(
+    'Il silenzio degli innocenti',
+    'en',
+    2
+);
