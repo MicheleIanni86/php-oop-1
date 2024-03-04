@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . "/Genre.php";
 class Production {
     public $titolo;
     public $lingua;

@@ -1,37 +1,8 @@
 <?php
 
 require_once __DIR__ . "./Models/Production.php";
-
-$bud_terence = new Production(
-    'Lo chiamavano Trinità',
-    'IT',
-    4
-);
-
-$di_caprio = new Production(
-    'Inception',
-    'US',
-    5
-);
-
-$jack_nick = new Production(
-    'Shining',
-    'US',
-    3
-);
-
-$ant_hop = new Production(
-    'Il silenzio degli innocenti',
-    'EN',
-    2
-);
-
-$films = [
-    $bud_terence,
-    $di_caprio,
-    $jack_nick,
-    $ant_hop
-]
+require_once __DIR__ . "./Models/Genre.php";
+require_once __DIR__ . "./db.php";
 
 ?>
 
@@ -45,21 +16,26 @@ $films = [
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class=" text-center">LISTA FILM</h1>
+    <h1 class=" text-center display-5 fw-bold mb-5">LISTA FILM</h1>
 
-    <table class="table">
-        <thead >
+    <table class="table border-2 ">
+        <thead class="fs-3">
             <th>Titolo</th>
             <th>Lingua</th>
             <th>Voto</th>
+            <th>Genere</th>
+            <th>Descrizione</th>
+
         </thead>
 
         <tbody >
             <?php foreach ($films as $film): ?>
                 <tr>
-                    <td> <?= $film->titolo ?> </td>
-                    <td> <?= $film->lingua ?> </td>
-                    <td> <?= $film->voto ?> </td>                                               
+                    <td  class="border-2 fw-bold"> <?= $film->titolo ?> </td>
+                    <td  class="border-2"> <?= $film->lingua ?> </td>
+                    <td  class="border-2"> <?= $film->voto ?> </td>                                               
+                    <td  class="border-2"> <?= $film->genere->nome ?> </td>                                               
+                    <td  class="border-2"> <?= $film->genere->descrizione ?> </td>                                               
                 </tr>
             <?php endforeach; ?>
         </tbody>
