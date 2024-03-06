@@ -20,37 +20,58 @@ require_once __DIR__ . "/db.php";
 <div class="main">
 
     <div class="container mt-5">
-        <h1 class=" text-center display-5 fw-bold mb-5">LISTA FILM</h1>
+        <h1 class=" text-center display-5 fw-bold mb-5">LISTA FILM e SERIE TV</h1>
 
     <div class="card list-film">
-
         
-        <table class="table border-1 ">
+        <!-- TABELLA FILM -->
+        <table class="table border-1 border-white">
             <thead class="fs-3">
                 <th>Titolo</th>
                 <th>Lingua</th>
                 <th>Voto</th>
                 <th>Genere</th>
                 <th>Descrizione</th>
+                <th>Stagioni</th>
+                <th>Episodi</th>
+                <th>Profitti</th>
+                <th>Durata</th>
                 
             </thead>
             
-            <tbody >
-                <?php foreach ($films as $film): ?>
-                    <tr>
-                        <td  class="border-1 fw-bold"> <?= $film->titolo ?> </td>
-                        <td  class="border-1"> <?= $film->lingua ?> </td>
-                        <td  class="border-1"> <?= $film->get_vote_star() ?> </td>                                               
-                        <td  class="border-1"> <?= $film->genere->nome ?> </td>                                               
-                        <td  class="border-1"> <?= $film->genere->descrizione ?> </td>                                               
-                    </tr>
-                    <?php endforeach; ?>
+            <tbody><span class="text-center fs-3 fw-bold">FILM & SERIE</span> 
 
-                    
-                </tbody>
-        </table>
+            <?php foreach ($videos as $video): ?>
+                <tr>
+                    <td  class="border-1 border-white fw-bold"> <?= $video->titolo ?> </td>
+
+                    <td  class="border-1 border-white"> <?= $video->lingua ?> </td>
+
+                    <td  class="border-1 border-white"> <?= $video->get_vote_star() ?> </td>      
+
+                    <td  class="border-1 border-white"> <?= $video->genere->nome ?> </td>         
+                                                          
+                    <td  class="border-1 border-white"> <?= $video->genere->descrizione ?> </td>
+
+                    <td class="border-1 border-white"> <?= $video instanceof TVSerie ? 'n°' . " " . $video->stagioni : '***' ?> </td>
+
+                    <td class="border-1 border-white"> <?= $video instanceof TVSerie ? 'n°' . " " .  $video->episodi : '***' ?> </td>
+
+                    <td class="border-1 border-white"> <?= $video instanceof Movie ? $video->profitti . " " . "Euro" : '***' ?> </td>
+
+                    <td class="border-1 border-white"> <?= $video instanceof Movie ? $video->durata . " " . "Min." : '***' ?> </td>                      
+ 
+                </tr>
+                <?php endforeach; ?>                   
+            </tbody>
             
-    </div>
+        </table>
+    </div>    
+
+
+
+
+        
     </div>
         
 </div>
