@@ -39,13 +39,33 @@ require_once __DIR__ . "/db.php";
                 
             </thead>
             
-            <tbody><span class="text-center fs-3 fw-bold">FILM & SERIE</span> 
+            <tbody>
+            <div class="title-and-legend text-center">
 
+                <span class="text-center fs-3 fw-bold">FILM & SERIE</span> 
+
+                <div class="d-flex justify-content-center  gap-3">
+                    <div class="d-flex align-items-center legend-film">
+                        <div class="square-film"></div>
+                        <p class="m-0"> = Film</p>
+                    </div>
+                    <div class="d-flex align-items-center legend-serie">
+                        <div class="square-serie"></div>
+                        <p class="m-0"> = Serie</p>
+                    </div>
+                </div>
+                
+            </div>    
             <?php foreach ($videos as $video): ?>
                 <tr>
-                    <td  class="border-1 border-white fw-bold"> <?= $video->titolo ?> </td>
 
-                    <td  class="border-1 border-white"> <?= $video->lingua ?> </td>
+                    <?php if ($video instanceof Movie): ?>
+                    <td  class="d-flex border-1 border-white fw-bold color-black-film align-items-center"><div class="square-film me-2"></div> <?= $video->titolo ?> </td>
+                    <?php elseif ($video instanceof TVSerie): ?>
+                    <td  class="d-flex border-1 border-white fw-bold color-orange-serie align-items-center"><div class="square-serie me-2"></div> <?= $video->titolo ?> </td>    
+                    <?php endif; ?>   
+
+                    <td  class="border-1 border-white "> <?= $video->lingua ?> </td>
 
                     <td  class="border-1 border-white"> <?= $video->get_vote_star() ?> </td>      
 

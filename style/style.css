@@ -8,5 +8,27 @@ body {
 .list-film,
 .list-serie,
 .table th, .table td {
-    background-color: crimson;
+    background-color: rgb(86, 3, 20);
+}
+
+.color-black-film {
+    color: rgb(67, 193, 4) !important;
+}
+
+.color-orange-serie {
+    color: rgb(255, 140, 0) !important;
+}
+
+.square-film {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(67, 193, 4);
+    border: 1px solid white;
+}
+
+.square-serie {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 140, 0);
+    border: 1px solid white;
 }
