@@ -1,32 +1,14 @@
 <?php
+require_once __DIR__ . "./Models/Production.php";
+require_once __DIR__ . "./Models/Genre.php";
 
-$bud_terence = new Production(
-    'Lo chiamavano Trinità',
-    'IT',
-    4,
-    new Genre("Western", "Spaghetti Western fantastico")
-);
+$bud_terence = new Production('lo chiamavano Trinità', 'it', 4, new Genre("Western", "Spaghetti Western fantastico"));
 
-$di_caprio = new Production(
-    'Inception',
-    'US',
-    5,
-    new Genre("Fantascienza", "Incredibilmente assurdo")
-);
+$di_caprio = new Production('inception', 'us', 5, new Genre("Fantascienza", "Incredibilmente assurdo"));
 
-$jack_nick = new Production(
-    'Shining',
-    'US',
-    3,
-    new Genre("Horror", "Kubrick ci sapeva fare")
-);
+$jack_nick = new Production('shining', 'us', 3, new Genre("Horror", "Kubrick ci sapeva fare"));
 
-$ant_hop = new Production(
-    'Il silenzio degli innocenti',
-    'EN',
-    2,
-    new Genre("Horror", "Il miglior Hopkins")
-);
+$ant_hop = new Production('il silenzio degli innocenti', 'en', 2, new Genre("Horror", "Il miglior Hopkins"));
 
 $films = [
     $bud_terence,

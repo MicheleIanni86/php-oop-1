@@ -13,10 +13,22 @@ class Production {
         int $voto,
         Genre $genere,   
         ) {
-            $this->titolo = $titolo;
-            $this->lingua = $lingua;
+            $this->set_titolo($titolo);
+            $this-> set_lingua($lingua);
             $this->voto = $voto;
             $this->genere = $genere;
+    }
+
+    public function set_titolo($titolo) {
+        if (empty($titolo) || !is_string($titolo)) 
+        return;
+    $this->titolo = ucfirst($titolo);
+    }
+
+    public function set_lingua($lingua) {
+        if (empty($lingua) || !is_string($lingua)) 
+        return;
+    $this->lingua = ucfirst($lingua);
     }
 
     public function get_vote_star() {
