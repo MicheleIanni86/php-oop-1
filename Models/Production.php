@@ -5,18 +5,18 @@ class Production {
     public $titolo;
     public $lingua;
     public $voto;
-    public $genere;
+    public $generi;
 
     function __construct(
         string $titolo,
         string $lingua,
         int $voto,
-        Genre $genere,   
+        array $generi,   
         ) {
             $this->set_titolo($titolo);
             $this-> set_lingua($lingua);
             $this->voto = $voto;
-            $this->genere = $genere;
+            $this->generi = $generi;
     }
 
     public function set_titolo($titolo) {

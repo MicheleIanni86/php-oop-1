@@ -12,11 +12,11 @@ class Movie extends Production
         string $titolo,
         string $lingua,
         int $voto,
-        Genre $genere, 
+        array $generi, 
         string $profitti,
         int $durata 
     ){
-        parent::__construct($titolo, $lingua, $voto, $genere);
+        parent::__construct($titolo, $lingua, $voto, $generi);
 
         $this->profitti = $profitti;
         $this->durata = $durata;

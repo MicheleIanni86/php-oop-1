@@ -74,9 +74,15 @@ require_once __DIR__ . "/db.php";
 
                     <td  class="border-1 border-white"> <?= $video->get_vote_star() ?> </td>      
 
-                    <td  class="border-1 border-white"> <?= $video->genere->nome ?> </td>         
-                                                          
-                    <td  class="border-1 border-white"> <?= $video->genere->descrizione ?> </td>
+                    <td  class="border-1 border-white"> 
+                        <?php foreach ($video->generi as $key => $genere): ?>
+                            <?= $key > 0 ? " - " : "" ?><?= $genere->nome ?>
+                        <?php endforeach; ?>  
+                    </td>
+                    
+                    <td  class="border-1 border-white"> 
+                        <?= $genere->descrizione ?> 
+                    </td>
 
                     <!-- CONDIZIONE PER MOVIE E SERIE  -->
                     <td class="border-1 border-white"> <?= $video instanceof TVSerie ? 'n°' . " " . $video->stagioni : '***' ?> </td>
