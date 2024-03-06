@@ -24,24 +24,11 @@ require_once __DIR__ . "/db.php";
 
     <div class="card list-film">
         
-        <!-- TABELLA FILM -->
+        <!-- TABELLA FILM & SERIE -->
         <table class="table border-1 border-white">
-            <thead class="fs-3">
-                <th>Titolo</th>
-                <th>Lingua</th>
-                <th>Voto</th>
-                <th>Genere</th>
-                <th>Descrizione</th>
-                <th>Stagioni</th>
-                <th>Episodi</th>
-                <th>Profitti</th>
-                <th>Durata</th>
-                
-            </thead>
-            
-            <tbody>
             <div class="title-and-legend text-center">
 
+                <!-- TITOLO E LEGENDA -->
                 <span class="text-center fs-3 fw-bold">FILM & SERIE</span> 
 
                 <div class="d-flex justify-content-center  gap-3">
@@ -56,9 +43,27 @@ require_once __DIR__ . "/db.php";
                 </div>
                 
             </div>    
+
+            <!-- TABLE HEAD -->
+            <thead class="fs-3">
+                <th>Titolo</th>
+                <th>Lingua</th>
+                <th>Voto</th>
+                <th>Genere</th>
+                <th>Descrizione</th>
+                <th>Stagioni</th>
+                <th>Episodi</th>
+                <th>Profitti</th>
+                <th>Durata</th>
+                
+            </thead>
+            
+            <!-- TABLE BODY -->
+            <tbody>
             <?php foreach ($videos as $video): ?>
                 <tr>
 
+                    <!-- TITOLO CONDIZIONE -->
                     <?php if ($video instanceof Movie): ?>
                     <td  class="d-flex border-1 border-white fw-bold color-black-film align-items-center"><div class="square-film me-2"></div> <?= $video->titolo ?> </td>
                     <?php elseif ($video instanceof TVSerie): ?>
@@ -73,6 +78,7 @@ require_once __DIR__ . "/db.php";
                                                           
                     <td  class="border-1 border-white"> <?= $video->genere->descrizione ?> </td>
 
+                    <!-- CONDIZIONE PER MOVIE E SERIE  -->
                     <td class="border-1 border-white"> <?= $video instanceof TVSerie ? 'n°' . " " . $video->stagioni : '***' ?> </td>
 
                     <td class="border-1 border-white"> <?= $video instanceof TVSerie ? 'n°' . " " .  $video->episodi : '***' ?> </td>
@@ -82,7 +88,7 @@ require_once __DIR__ . "/db.php";
                     <td class="border-1 border-white"> <?= $video instanceof Movie ? $video->durata . " " . "Min." : '***' ?> </td>                      
  
                 </tr>
-                <?php endforeach; ?>                   
+            <?php endforeach; ?>                   
             </tbody>
             
         </table>
