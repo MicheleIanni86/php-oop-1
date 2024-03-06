@@ -45,6 +45,8 @@ require_once __DIR__ . "/db.php";
                         <td  class="border-1"> <?= $film->genere->descrizione ?> </td>                                               
                     </tr>
                     <?php endforeach; ?>
+
+                    
                 </tbody>
         </table>
             
